@@ -27,7 +27,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.VisibleForTesting;
 import androidx.core.util.Pair;
-import java.util.Calendar;
+import com.ibm.icu.util.Calendar;
 import java.util.Collection;
 import java.util.Locale;
 
@@ -135,8 +135,7 @@ class MonthAdapter extends BaseAdapter {
       dayNumber = offsetPosition + 1;
       // The tag and text uniquely identify the view within the MaterialCalendar for testing
       dayTextView.setTag(month);
-      Locale locale = dayTextView.getResources().getConfiguration().locale;
-      dayTextView.setText(String.format(locale, "%d", dayNumber));
+      dayTextView.setText(String.format(UtcDates.PERSIAN_LOCALE.toLocale(), "%d", dayNumber));
       dayTextView.setVisibility(View.VISIBLE);
       dayTextView.setEnabled(true);
     }

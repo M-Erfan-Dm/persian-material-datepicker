@@ -47,7 +47,7 @@ import androidx.core.view.AccessibilityDelegateCompat;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import com.google.android.material.button.MaterialButton;
-import java.util.Calendar;
+import com.ibm.icu.util.Calendar;
 
 /**
  * Fragment for a days of week {@link Calendar} represented as a header row of days labels and

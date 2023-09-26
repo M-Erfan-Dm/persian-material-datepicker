@@ -23,7 +23,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import com.google.android.material.internal.TextWatcherAdapter;
 import com.google.android.material.textfield.TextInputLayout;
-import java.text.DateFormat;
+import com.ibm.icu.text.DateFormat;
 import java.text.ParseException;
 import java.util.Date;
 import java.util.Locale;
@@ -112,18 +112,18 @@ abstract class DateFormatTextWatcher extends TextWatcherAdapter {
   @Override
   public void afterTextChanged(@NonNull Editable s) {
     // Exclude some languages from automatically adding delimiters.
-    if (Locale.getDefault().getLanguage().equals(Locale.KOREAN.getLanguage())) {
-      return;
-    }
+//    if (Locale.getDefault().getLanguage().equals(Locale.KOREAN.getLanguage())) {
+//      return;
+//    }
 
     if (s.length() == 0 || s.length() >= formatHint.length() || s.length() < lastLength) {
       return;
     }
 
-    char nextCharHint = formatHint.charAt(s.length());
-    if (!Character.isDigit(nextCharHint)) {
-      s.append(nextCharHint);
-    }
+//    char nextCharHint = formatHint.charAt(s.length());
+//    if (!Character.isDigit(nextCharHint)) {
+//      s.append(nextCharHint);
+//    }
   }
 
   private Runnable createRangeErrorCallback(final long milliseconds) {

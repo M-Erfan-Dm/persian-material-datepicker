@@ -23,7 +23,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import ir.erfandm.persiandatepicker.MaterialCalendar.CalendarSelector;
-import java.util.Calendar;
+import com.ibm.icu.util.Calendar;
 import java.util.Locale;
 
 class YearGridAdapter extends RecyclerView.Adapter<YearGridAdapter.ViewHolder> {

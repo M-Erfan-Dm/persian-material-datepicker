@@ -16,8 +16,8 @@
 package ir.erfandm.persiandatepicker;
 
 import androidx.annotation.Nullable;
-import java.util.Calendar;
-import java.util.TimeZone;
+import com.ibm.icu.util.Calendar;
+import com.ibm.icu.util.TimeZone;
 
 /** Provider for the current date and time. */
 class TimeSource {
@@ -87,7 +87,7 @@ class TimeSource {
    *     device's timezone will be used.
    */
   Calendar now(@Nullable TimeZone timeZone) {
-    Calendar calendar = timeZone == null ? Calendar.getInstance() : Calendar.getInstance(timeZone);
+    Calendar calendar = timeZone == null ? Calendar.getInstance(UtcDates.PERSIAN_LOCALE) : Calendar.getInstance(timeZone, UtcDates.PERSIAN_LOCALE);
     if (fixedTimeMs != null) {
       calendar.setTimeInMillis(fixedTimeMs);
     }

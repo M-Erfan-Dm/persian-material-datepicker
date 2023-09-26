@@ -22,8 +22,10 @@ import android.os.Build.VERSION_CODES;
 import android.text.format.DateUtils;
 import androidx.annotation.Nullable;
 import androidx.core.util.Pair;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
+import com.ibm.icu.text.SimpleDateFormat;
+import com.ibm.icu.util.Calendar;
+import com.ibm.icu.util.ULocale;
+
 import java.util.Date;
 import java.util.Locale;
 
@@ -34,14 +36,14 @@ class DateStrings {
 
   static String getYearMonth(long timeInMillis) {
     if (VERSION.SDK_INT >= VERSION_CODES.N) {
-      return UtcDates.getYearMonthFormat(Locale.getDefault()).format(new Date(timeInMillis));
+      return UtcDates.getYearMonthFormat(UtcDates.PERSIAN_LOCALE).format(new Date(timeInMillis));
     }
     int flags = DateUtils.FORMAT_SHOW_YEAR | DateUtils.FORMAT_NO_MONTH_DAY | DateUtils.FORMAT_UTC;
     return DateUtils.formatDateTime(null, timeInMillis, flags);
   }
 
   static String getYearMonthDay(long timeInMillis) {
-    return getYearMonthDay(timeInMillis, Locale.getDefault());
+    return getYearMonthDay(timeInMillis, UtcDates.PERSIAN_LOCALE);
   }
 
   /**
@@ -54,7 +56,7 @@ class DateStrings {
    * @param locale Locale for date string.
    * @return Date string with year, month, and day formatted properly for the specified Locale.
    */
-  static String getYearMonthDay(long timeInMillis, Locale locale) {
+  static String getYearMonthDay(long timeInMillis, ULocale locale) {
     if (VERSION.SDK_INT >= VERSION_CODES.N) {
       return UtcDates.getYearAbbrMonthDayFormat(locale).format(new Date(timeInMillis));
     }
@@ -62,7 +64,7 @@ class DateStrings {
   }
 
   static String getMonthDay(long timeInMillis) {
-    return getMonthDay(timeInMillis, Locale.getDefault());
+    return getMonthDay(timeInMillis, UtcDates.PERSIAN_LOCALE);
   }
 
   /**
@@ -75,7 +77,7 @@ class DateStrings {
    * @param locale Locale for date string.
    * @return Date string with month and day formatted properly for the specified Locale.
    */
-  static String getMonthDay(long timeInMillis, Locale locale) {
+  static String getMonthDay(long timeInMillis, ULocale locale) {
     if (VERSION.SDK_INT >= VERSION_CODES.N) {
       return UtcDates.getAbbrMonthDayFormat(locale).format(new Date(timeInMillis));
     }
@@ -83,10 +85,10 @@ class DateStrings {
   }
 
   static String getMonthDayOfWeekDay(long timeInMillis) {
-    return getMonthDayOfWeekDay(timeInMillis, Locale.getDefault());
+    return getMonthDayOfWeekDay(timeInMillis, UtcDates.PERSIAN_LOCALE);
   }
 
-  static String getMonthDayOfWeekDay(long timeInMillis, Locale locale) {
+  static String getMonthDayOfWeekDay(long timeInMillis, ULocale locale) {
     if (VERSION.SDK_INT >= VERSION_CODES.N) {
       return UtcDates.getMonthWeekdayDayFormat(locale).format(new Date(timeInMillis));
     }
@@ -94,10 +96,10 @@ class DateStrings {
   }
 
   static String getYearMonthDayOfWeekDay(long timeInMillis) {
-    return getYearMonthDayOfWeekDay(timeInMillis, Locale.getDefault());
+    return getYearMonthDayOfWeekDay(timeInMillis, UtcDates.PERSIAN_LOCALE);
   }
 
-  static String getYearMonthDayOfWeekDay(long timeInMillis, Locale locale) {
+  static String getYearMonthDayOfWeekDay(long timeInMillis, ULocale locale) {
     if (VERSION.SDK_INT >= VERSION_CODES.N) {
       return UtcDates.getYearMonthWeekdayDayFormat(locale).format(new Date(timeInMillis));
     }
@@ -193,14 +195,14 @@ class DateStrings {
     } else if (startCalendar.get(Calendar.YEAR) == endCalendar.get(Calendar.YEAR)) {
       if (startCalendar.get(Calendar.YEAR) == currentCalendar.get(Calendar.YEAR)) {
         return Pair.create(
-            getMonthDay(start, Locale.getDefault()), getMonthDay(end, Locale.getDefault()));
+            getMonthDay(start, UtcDates.PERSIAN_LOCALE), getMonthDay(end, UtcDates.PERSIAN_LOCALE));
       } else {
         return Pair.create(
-            getMonthDay(start, Locale.getDefault()), getYearMonthDay(end, Locale.getDefault()));
+            getMonthDay(start, UtcDates.PERSIAN_LOCALE), getYearMonthDay(end, UtcDates.PERSIAN_LOCALE));
       }
     }
     return Pair.create(
-        getYearMonthDay(start, Locale.getDefault()), getYearMonthDay(end, Locale.getDefault()));
+        getYearMonthDay(start, UtcDates.PERSIAN_LOCALE), getYearMonthDay(end, UtcDates.PERSIAN_LOCALE));
   }
 
   /**

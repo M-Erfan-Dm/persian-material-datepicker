@@ -23,27 +23,39 @@ import androidx.annotation.Nullable;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.util.Arrays;
-import java.util.Calendar;
-import java.util.GregorianCalendar;
+import com.ibm.icu.util.Calendar;
+import com.ibm.icu.util.GregorianCalendar;
 
 /** Contains convenience operations for a month within a specific year. */
 final class Month implements Comparable<Month>, Parcelable {
 
   /** The acceptable int values for month when using {@link Month#create(int, int)} */
+  public static final int FARVARDIN = 0;
+  public static final int ORDIBEHESHT = 1;
+  public static final int KHORDAD = 2;
+  public static final int TIR = 3;
+  public static final int MORDAD = 4;
+  public static final int SHAHRIVAR = 5;
+  public static final int MEHR = 6;
+  public static final int ABAN = 7;
+  public static final int AZAR = 8;
+  public static final int DEY = 9;
+  public static final int BAHMAN = 10;
+  public static final int ESFAND = 11;
   @Retention(RetentionPolicy.SOURCE)
   @IntDef({
-    Calendar.JANUARY,
-    Calendar.FEBRUARY,
-    Calendar.MARCH,
-    Calendar.APRIL,
-    Calendar.MAY,
-    Calendar.JUNE,
-    Calendar.JULY,
-    Calendar.AUGUST,
-    Calendar.SEPTEMBER,
-    Calendar.OCTOBER,
-    Calendar.NOVEMBER,
-    Calendar.DECEMBER
+          FARVARDIN,
+          ORDIBEHESHT,
+          KHORDAD,
+          TIR,
+          MORDAD,
+          SHAHRIVAR,
+          MEHR,
+          ABAN,
+          AZAR,
+          DEY,
+          BAHMAN,
+          ESFAND
   })
   @interface Months {}
 
@@ -145,11 +157,12 @@ final class Month implements Comparable<Month>, Parcelable {
    *     {@link GregorianCalendar}
    */
   int monthsUntil(@NonNull Month other) {
-    if (firstOfMonth instanceof GregorianCalendar) {
-      return (other.year - year) * 12 + (other.month - month);
-    } else {
-      throw new IllegalArgumentException("Only Gregorian calendars are supported.");
-    }
+    return (other.year - year) * 12 + (other.month - month);
+//    if (firstOfMonth instanceof GregorianCalendar) {
+//
+//    } else {
+//      throw new IllegalArgumentException("Only Gregorian calendars are supported.");
+//    }
   }
 
   long getStableId() {

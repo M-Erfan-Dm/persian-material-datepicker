@@ -60,7 +60,7 @@ import com.google.android.material.shape.MaterialShapeDrawable;
 import com.google.errorprone.annotations.CanIgnoreReturnValue;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
-import java.text.SimpleDateFormat;
+import com.ibm.icu.text.SimpleDateFormat;
 import java.util.LinkedHashSet;
 
 /**

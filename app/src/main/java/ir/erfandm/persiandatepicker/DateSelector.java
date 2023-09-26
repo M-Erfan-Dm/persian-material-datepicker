@@ -34,7 +34,7 @@ import androidx.core.util.Pair;
 
 import com.google.android.material.internal.ViewUtils;
 
-import java.text.SimpleDateFormat;
+import com.ibm.icu.text.SimpleDateFormat;
 import java.util.Collection;
 
 /**

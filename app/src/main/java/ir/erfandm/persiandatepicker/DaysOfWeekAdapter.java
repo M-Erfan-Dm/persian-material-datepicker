@@ -25,7 +25,9 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import java.util.Calendar;
+
+import com.ibm.icu.text.SimpleDateFormat;
+import com.ibm.icu.util.Calendar;
 import java.util.Locale;
 
 /**
@@ -41,8 +43,8 @@ class DaysOfWeekAdapter extends BaseAdapter {
   /** Style value from Calendar.NARROW_FORMAT unavailable before 1.8 */
   private static final int NARROW_FORMAT = 4;
 
-  private static final int CALENDAR_DAY_STYLE =
-      VERSION.SDK_INT >= VERSION_CODES.O ? NARROW_FORMAT : Calendar.SHORT;
+//  private static final int CALENDAR_DAY_STYLE =
+//      VERSION.SDK_INT >= VERSION_CODES.O ? NARROW_FORMAT : Calendar.SHORT;
 
   /**
    * <p>This {@link android.widget.Adapter} respects the {@link Calendar#getFirstDayOfWeek()}
@@ -87,13 +89,12 @@ class DaysOfWeekAdapter extends BaseAdapter {
           (TextView) layoutInflater.inflate(R.layout.calendar_day_of_week, parent, false);
     }
     calendar.set(Calendar.DAY_OF_WEEK, positionToDayOfWeek(position));
-    Locale locale = dayOfWeek.getResources().getConfiguration().locale;
-    dayOfWeek.setText(
-        calendar.getDisplayName(Calendar.DAY_OF_WEEK, CALENDAR_DAY_STYLE, locale));
+    String dayOfWeekName = new SimpleDateFormat("eeeee", UtcDates.PERSIAN_LOCALE)
+            .format(calendar.getTimeInMillis());
+    dayOfWeek.setText(dayOfWeekName);
     dayOfWeek.setContentDescription(
-        String.format(
-            parent.getContext().getString(R.string.mtrl_picker_day_of_week_column_header),
-            calendar.getDisplayName(Calendar.DAY_OF_WEEK, Calendar.LONG, Locale.getDefault())));
+        String.format(parent.getContext().getString(R.string.mtrl_picker_day_of_week_column_header),
+                dayOfWeekName));
     return dayOfWeek;
   }
 

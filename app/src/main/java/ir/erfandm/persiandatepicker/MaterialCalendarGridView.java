@@ -36,7 +36,7 @@ import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 
 import com.google.android.material.internal.ViewUtils;
 
-import java.util.Calendar;
+import com.ibm.icu.util.Calendar;
 
 final class MaterialCalendarGridView extends GridView {
 

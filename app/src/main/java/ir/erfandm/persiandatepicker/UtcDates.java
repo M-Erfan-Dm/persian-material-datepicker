@@ -17,15 +17,16 @@ package ir.erfandm.persiandatepicker;
 
 import android.annotation.TargetApi;
 import android.content.res.Resources;
-import android.icu.text.DisplayContext;
 import android.os.Build.VERSION_CODES;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Locale;
-import java.util.TimeZone;
+import com.ibm.icu.text.DateFormat;
+import com.ibm.icu.text.DisplayContext;
+import com.ibm.icu.text.SimpleDateFormat;
+import com.ibm.icu.util.Calendar;
+import com.ibm.icu.util.TimeZone;
+import com.ibm.icu.util.ULocale;
+
 import java.util.concurrent.atomic.AtomicReference;
 
 /**
@@ -34,7 +35,9 @@ import java.util.concurrent.atomic.AtomicReference;
  */
 class UtcDates {
 
-  static final String UTC = "UTC";
+  static final String TEHRAN = "Asia/Tehran";
+
+  static final ULocale PERSIAN_LOCALE = new ULocale("fa_IR@calendar=persian");
 
   static AtomicReference<TimeSource> timeSourceRef = new AtomicReference<>();
 
@@ -50,12 +53,11 @@ class UtcDates {
   private UtcDates() {}
 
   private static TimeZone getTimeZone() {
-    return TimeZone.getTimeZone(UTC);
+    return TimeZone.getTimeZone(TEHRAN);
   }
 
-  @TargetApi(VERSION_CODES.N)
-  private static android.icu.util.TimeZone getUtcAndroidTimeZone() {
-    return android.icu.util.TimeZone.getTimeZone(UTC);
+  private static TimeZone getUtcAndroidTimeZone() {
+    return TimeZone.getTimeZone(TEHRAN);
   }
 
   /**
@@ -91,7 +93,7 @@ class UtcDates {
    * @see @see Calendar#clear()
    */
   static Calendar getUtcCalendarOf(@Nullable Calendar rawCalendar) {
-    Calendar utc = Calendar.getInstance(getTimeZone());
+    Calendar utc = Calendar.getInstance(getTimeZone(), UtcDates.PERSIAN_LOCALE);
     if (rawCalendar == null) {
       utc.clear();
     } else {
@@ -132,16 +134,15 @@ class UtcDates {
     return sanitizedStartItem.getTimeInMillis();
   }
 
-  @TargetApi(VERSION_CODES.N)
-  private static android.icu.text.DateFormat getAndroidFormat(String pattern, Locale locale) {
-    android.icu.text.DateFormat format =
-        android.icu.text.DateFormat.getInstanceForSkeleton(pattern, locale);
+  private static DateFormat getAndroidFormat(String pattern, ULocale locale) {
+    DateFormat format =
+        DateFormat.getInstanceForSkeleton(pattern, locale);
     format.setTimeZone(getUtcAndroidTimeZone());
     format.setContext(DisplayContext.CAPITALIZATION_FOR_STANDALONE);
     return format;
   }
 
-  private static DateFormat getFormat(int style, Locale locale) {
+  private static DateFormat getFormat(int style, ULocale locale) {
     DateFormat format = DateFormat.getDateInstance(style, locale);
     format.setTimeZone(getTimeZone());
     return format;
@@ -155,10 +156,10 @@ class UtcDates {
 
   static SimpleDateFormat getDefaultTextInputFormat() {
     String defaultFormatPattern =
-        ((SimpleDateFormat) DateFormat.getDateInstance(DateFormat.SHORT, Locale.getDefault()))
+        ((SimpleDateFormat) DateFormat.getDateInstance(DateFormat.SHORT, PERSIAN_LOCALE))
             .toPattern();
     defaultFormatPattern = getDatePatternAsInputFormat(defaultFormatPattern);
-    SimpleDateFormat format = new SimpleDateFormat(defaultFormatPattern, Locale.getDefault());
+    SimpleDateFormat format = new SimpleDateFormat(defaultFormatPattern, PERSIAN_LOCALE);
     format.setTimeZone(getTimeZone());
     format.setLenient(false);
     return format;
@@ -171,9 +172,9 @@ class UtcDates {
     String dayChar = res.getString(R.string.mtrl_picker_text_input_day_abbr);
 
     // Remove duplicate characters for Korean.
-    if (Locale.getDefault().getLanguage().equals(Locale.KOREAN.getLanguage())) {
-      formatHint = formatHint.replaceAll("d+", "d").replaceAll("M+", "M").replaceAll("y+", "y");
-    }
+//    if (Locale.getDefault().getLanguage().equals(Locale.KOREAN.getLanguage())) {
+//      formatHint = formatHint.replaceAll("d+", "d").replaceAll("M+", "M").replaceAll("y+", "y");
+//    }
 
     return formatHint.replace("d", dayChar).replace("M", monthChar).replace("y", yearChar);
   }
@@ -209,63 +210,59 @@ class UtcDates {
   }
 
   static SimpleDateFormat getSimpleFormat(String pattern) {
-    return getSimpleFormat(pattern, Locale.getDefault());
+    return getSimpleFormat(pattern, PERSIAN_LOCALE);
   }
 
-  private static SimpleDateFormat getSimpleFormat(String pattern, Locale locale) {
+  private static SimpleDateFormat getSimpleFormat(String pattern, ULocale locale) {
     SimpleDateFormat format = new SimpleDateFormat(pattern, locale);
     format.setTimeZone(getTimeZone());
     return format;
   }
 
-  @TargetApi(VERSION_CODES.N)
-  static android.icu.text.DateFormat getYearMonthFormat(Locale locale) {
-    return getAndroidFormat(android.icu.text.DateFormat.YEAR_MONTH, locale);
+  static DateFormat getYearMonthFormat(ULocale locale) {
+//    return getAndroidFormat(DateFormat.YEAR_MONTH, locale);
+    return getAndroidFormat("MMMy", locale);
   }
 
-  @TargetApi(VERSION_CODES.N)
-  static android.icu.text.DateFormat getYearAbbrMonthDayFormat(Locale locale) {
-    return getAndroidFormat(android.icu.text.DateFormat.YEAR_ABBR_MONTH_DAY, locale);
+  static DateFormat getYearAbbrMonthDayFormat(ULocale locale) {
+    return getAndroidFormat(DateFormat.YEAR_ABBR_MONTH_DAY, locale);
   }
 
-  @TargetApi(VERSION_CODES.N)
-  static android.icu.text.DateFormat getAbbrMonthDayFormat(Locale locale) {
-    return getAndroidFormat(android.icu.text.DateFormat.ABBR_MONTH_DAY, locale);
+  static DateFormat getAbbrMonthDayFormat(ULocale locale) {
+    return getAndroidFormat(DateFormat.ABBR_MONTH_DAY, locale);
   }
 
-  @TargetApi(VERSION_CODES.N)
-  static android.icu.text.DateFormat getMonthWeekdayDayFormat(Locale locale) {
-    return getAndroidFormat(android.icu.text.DateFormat.MONTH_WEEKDAY_DAY, locale);
+  static DateFormat getMonthWeekdayDayFormat(ULocale locale) {
+    return getAndroidFormat(DateFormat.MONTH_WEEKDAY_DAY, locale);
   }
 
-  @TargetApi(VERSION_CODES.N)
-  static android.icu.text.DateFormat getYearMonthWeekdayDayFormat(Locale locale) {
-    return getAndroidFormat(android.icu.text.DateFormat.YEAR_MONTH_WEEKDAY_DAY, locale);
+  static DateFormat getYearMonthWeekdayDayFormat(ULocale locale) {
+    return getAndroidFormat(DateFormat.YEAR_MONTH_WEEKDAY_DAY, locale);
   }
 
   static DateFormat getMediumFormat() {
-    return getMediumFormat(Locale.getDefault());
+    return getMediumFormat(PERSIAN_LOCALE);
   }
 
-  static DateFormat getMediumFormat(Locale locale) {
+  static DateFormat getMediumFormat(ULocale locale) {
     return getFormat(DateFormat.MEDIUM, locale);
   }
 
   static DateFormat getMediumNoYear() {
-    return getMediumNoYear(Locale.getDefault());
+    return getMediumNoYear(PERSIAN_LOCALE);
   }
 
-  static DateFormat getMediumNoYear(Locale locale) {
+  static DateFormat getMediumNoYear(ULocale locale) {
     SimpleDateFormat format = (SimpleDateFormat) getMediumFormat(locale);
     format.applyPattern(removeYearFromDateFormatPattern(format.toPattern()));
     return format;
   }
 
   static DateFormat getFullFormat() {
-    return getFullFormat(Locale.getDefault());
+    return getFullFormat(PERSIAN_LOCALE);
   }
 
-  static DateFormat getFullFormat(Locale locale) {
+  static DateFormat getFullFormat(ULocale locale) {
     return getFormat(DateFormat.FULL, locale);
   }
 

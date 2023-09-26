@@ -26,7 +26,7 @@ import androidx.core.util.ObjectsCompat;
 import com.google.errorprone.annotations.CanIgnoreReturnValue;
 
 import java.util.Arrays;
-import java.util.Calendar;
+import com.ibm.icu.util.Calendar;
 import java.util.Objects;
 
 /**
@@ -243,13 +243,13 @@ public final class CalendarConstraints implements Parcelable {
      * is called. Set to January, 1900.
      */
     static final long DEFAULT_START =
-        UtcDates.canonicalYearMonthDay(Month.create(1900, Calendar.JANUARY).timeInMillis);
+        UtcDates.canonicalYearMonthDay(Month.create(1300, Month.FARVARDIN).timeInMillis);
     /**
      * Default UTC timeInMilliseconds for the last selectable month unless {@link Builder#setEnd} is
      * called. Set to December, 2100.
      */
     static final long DEFAULT_END =
-        UtcDates.canonicalYearMonthDay(Month.create(2100, Calendar.DECEMBER).timeInMillis);
+        UtcDates.canonicalYearMonthDay(Month.create(1500, Month.ESFAND).timeInMillis);
 
     private static final String DEEP_COPY_VALIDATOR_KEY = "DEEP_COPY_VALIDATOR_KEY";
 
