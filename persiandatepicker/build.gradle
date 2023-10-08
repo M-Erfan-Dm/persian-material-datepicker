@@ -1,5 +1,5 @@
 plugins {
-    id 'com.android.application'
+    id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
 }
 
@@ -8,7 +8,6 @@ android {
     compileSdk 34
 
     defaultConfig {
-        applicationId "ir.erfandm.persiandatepicker"
         minSdk 24
         targetSdk 34
         versionCode 1
@@ -36,7 +35,7 @@ dependencies {
 
     implementation 'androidx.core:core-ktx:1.12.0'
     implementation 'androidx.appcompat:appcompat:1.6.1'
-    implementation 'com.google.android.material:material:1.9.0'
+    implementation 'com.google.android.material:material:1.10.0'
     implementation 'androidx.annotation:annotation-jvm:1.7.0'
     implementation 'com.google.errorprone:error_prone_annotations:2.21.1'
     implementation 'com.ibm.icu:icu4j:73.2'
