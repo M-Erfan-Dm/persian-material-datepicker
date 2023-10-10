@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package ir.erfandm.persiandatepicker;
+package ir.erfandm.persiandatepicker.datepicker;
 
 import com.google.android.material.R;
 

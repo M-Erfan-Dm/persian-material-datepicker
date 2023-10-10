@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package ir.erfandm.persiandatepicker;
+package ir.erfandm.persiandatepicker.datepicker;
 
 import android.content.Context;
 import android.content.res.ColorStateList;
@@ -22,6 +22,8 @@ import android.graphics.Paint;
 import androidx.annotation.NonNull;
 import com.google.android.material.resources.MaterialAttributes;
 import com.google.android.material.resources.MaterialResources;
+
+import ir.erfandm.persiandatepicker.R;
 
 /**
  * Data class for loaded {@code R.styleable.MaterialCalendar} and {@code

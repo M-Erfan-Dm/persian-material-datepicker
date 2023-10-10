@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package ir.erfandm.persiandatepicker;
+package ir.erfandm.persiandatepicker.datepicker;
 
 import android.content.Context;
 import android.content.res.Resources;
@@ -36,6 +36,8 @@ import com.google.android.material.textfield.TextInputLayout;
 import com.ibm.icu.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collection;
+
+import ir.erfandm.persiandatepicker.R;
 
 /**
  * A {@link DateSelector} that uses a {@link Long} for its selection state.

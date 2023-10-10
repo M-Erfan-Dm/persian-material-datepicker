@@ -29,6 +29,13 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    sourceSets {
+        main {
+            res {
+                srcDirs 'src/main/res', 'src/main/java/ir/erfandm/persiandatepicker/datepicker/res'
+            }
+        }
+    }
 }
 
 dependencies {

@@ -13,11 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package ir.erfandm.persiandatepicker;
+package ir.erfandm.persiandatepicker.datepicker;
 
-import android.annotation.TargetApi;
 import android.content.res.Resources;
-import android.os.Build.VERSION_CODES;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import com.ibm.icu.text.DateFormat;
@@ -28,6 +27,8 @@ import com.ibm.icu.util.TimeZone;
 import com.ibm.icu.util.ULocale;
 
 import java.util.concurrent.atomic.AtomicReference;
+
+import ir.erfandm.persiandatepicker.R;
 
 /**
  * Utility class for common operations on timezones, calendars, dateformats, and longs representing

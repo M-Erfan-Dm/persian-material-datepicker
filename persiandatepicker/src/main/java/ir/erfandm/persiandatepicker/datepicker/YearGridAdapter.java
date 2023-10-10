@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package ir.erfandm.persiandatepicker;
+package ir.erfandm.persiandatepicker.datepicker;
 
 import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -22,7 +22,9 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
-import ir.erfandm.persiandatepicker.MaterialCalendar.CalendarSelector;
+
+import ir.erfandm.persiandatepicker.R;
+import ir.erfandm.persiandatepicker.datepicker.MaterialCalendar.CalendarSelector;
 import com.ibm.icu.util.Calendar;
 import java.util.Locale;
 

@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package ir.erfandm.persiandatepicker;
+package ir.erfandm.persiandatepicker.datepicker;
 
 import android.content.Context;
 import androidx.recyclerview.widget.RecyclerView;
@@ -28,6 +28,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.view.ViewCompat;
+
+import ir.erfandm.persiandatepicker.R;
 
 /**
  * Manages the instances of {@link MaterialCalendarGridView} that represent each month in a {@link

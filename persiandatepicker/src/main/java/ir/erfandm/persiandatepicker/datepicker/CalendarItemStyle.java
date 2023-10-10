@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package ir.erfandm.persiandatepicker;
+package ir.erfandm.persiandatepicker.datepicker;
 
 import android.content.Context;
 import android.content.res.ColorStateList;
@@ -33,6 +33,8 @@ import androidx.core.view.ViewCompat;
 import com.google.android.material.resources.MaterialResources;
 import com.google.android.material.shape.MaterialShapeDrawable;
 import com.google.android.material.shape.ShapeAppearanceModel;
+
+import ir.erfandm.persiandatepicker.R;
 
 /**
  * Loads and applies {@code R.styleable.MaterialCalendarDay} attributes to {@link TextView}

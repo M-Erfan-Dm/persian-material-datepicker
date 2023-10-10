@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package ir.erfandm.persiandatepicker;
+package ir.erfandm.persiandatepicker.datepicker;
 
 import static androidx.annotation.RestrictTo.Scope.LIBRARY_GROUP;
 import android.app.Dialog;
@@ -62,6 +62,8 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import com.ibm.icu.text.SimpleDateFormat;
 import java.util.LinkedHashSet;
+
+import ir.erfandm.persiandatepicker.R;
 
 /**
  * A {@link Dialog} with a header, {@link MaterialCalendar}, and set of actions.

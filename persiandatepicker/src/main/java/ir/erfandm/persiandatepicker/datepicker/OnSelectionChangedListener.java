@@ -13,11 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package ir.erfandm.persiandatepicker;
+package ir.erfandm.persiandatepicker.datepicker;
 
-/** Listener that provides the current {@code MaterialCalendar<S>} selection. */
-public interface MaterialPickerOnPositiveButtonClickListener<S> {
+import androidx.annotation.NonNull;
+import androidx.annotation.RestrictTo;
+import androidx.annotation.RestrictTo.Scope;
 
-  /** Called with the current {@code MaterialCalendar<S>} selection. */
-  void onPositiveButtonClick(S selection);
+/** Listener that provides selection. */
+@RestrictTo(Scope.LIBRARY_GROUP)
+public abstract class OnSelectionChangedListener<S> {
+
+  /** Called with the current selection. */
+  public abstract void onSelectionChanged(@NonNull S selection);
+
+  public void onIncompleteSelectionChanged() {}
 }

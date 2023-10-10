@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package ir.erfandm.persiandatepicker;
+package ir.erfandm.persiandatepicker.datepicker;
 
 import android.content.Context;
 import android.icu.text.DateFormat;
@@ -28,6 +28,8 @@ import com.ibm.icu.util.ULocale;
 
 import java.util.Date;
 import java.util.Locale;
+
+import ir.erfandm.persiandatepicker.R;
 
 /** Util methods for formatting date strings for use in {@link MaterialDatePicker}. */
 class DateStrings {

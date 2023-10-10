@@ -13,14 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package ir.erfandm.persiandatepicker;
+package ir.erfandm.persiandatepicker.datepicker;
 
 import static androidx.core.util.Preconditions.checkNotNull;
 
 import android.os.Parcel;
 import android.os.Parcelable;
 import androidx.annotation.NonNull;
-import ir.erfandm.persiandatepicker.CalendarConstraints.DateValidator;
+import ir.erfandm.persiandatepicker.datepicker.CalendarConstraints.DateValidator;
 import java.util.List;
 
 /** A {@link DateValidator} that accepts a list of Date Validators. */

@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package ir.erfandm.persiandatepicker;
+package ir.erfandm.persiandatepicker.datepicker;
 
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -191,7 +191,7 @@ final class Month implements Comparable<Month>, Parcelable {
   }
 
   /**
-   * Returns a {@link ir.erfandm.persiandatepicker.Month} {@code months} months after this
+   * Returns a {@link Month} {@code months} months after this
    * instance.
    */
   @NonNull

@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package ir.erfandm.persiandatepicker;
+package ir.erfandm.persiandatepicker.datepicker;
 
 import android.content.Context;
 import android.content.res.ColorStateList;
@@ -29,7 +29,8 @@ import androidx.annotation.VisibleForTesting;
 import androidx.core.util.Pair;
 import com.ibm.icu.util.Calendar;
 import java.util.Collection;
-import java.util.Locale;
+
+import ir.erfandm.persiandatepicker.R;
 
 /**
  * Represents the days of a month with {@link TextView} instances for each day.

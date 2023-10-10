@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 The Android Open Source Project
+ * Copyright 2020 The Android Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,65 +13,66 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package ir.erfandm.persiandatepicker;
+
+package ir.erfandm.persiandatepicker.datepicker;
 
 import android.os.Parcel;
 import android.os.Parcelable;
 import androidx.annotation.NonNull;
-import ir.erfandm.persiandatepicker.CalendarConstraints.DateValidator;
+import ir.erfandm.persiandatepicker.datepicker.CalendarConstraints.DateValidator;
 import java.util.Arrays;
 
 /**
- * A {@link CalendarConstraints.DateValidator} that enables dates from a given point forward.
- * Defaults to the current moment in device time forward using {@link
- * DateValidatorPointForward#now()}, but can be set to any point, as UTC milliseconds, using {@link
- * DateValidatorPointForward#from(long)}.
+ * A {@link CalendarConstraints.DateValidator} that enables only dates before a given point.
+ * Defaults to the current moment in device time backwards using {@link
+ * DateValidatorPointBackward#now()}, but can be set to any point, as UTC milliseconds, using {@link
+ * DateValidatorPointBackward#before(long)}.
  */
-public class DateValidatorPointForward implements DateValidator {
+public class DateValidatorPointBackward implements DateValidator {
 
   private final long point;
 
-  private DateValidatorPointForward(long point) {
+  private DateValidatorPointBackward(long point) {
     this.point = point;
   }
 
   /**
-   * Returns a {@link CalendarConstraints.DateValidator} which enables days from {@code point}, in
-   * UTC milliseconds, forward.
+   * Returns a {@link CalendarConstraints.DateValidator} which enables only days before {@code
+   * point}, in UTC milliseconds.
    */
   @NonNull
-  public static DateValidatorPointForward from(long point) {
-    return new DateValidatorPointForward(point);
+  public static DateValidatorPointBackward before(long point) {
+    return new DateValidatorPointBackward(point);
   }
 
   /**
    * Returns a {@link CalendarConstraints.DateValidator} enabled from the current moment in device
-   * time forward.
+   * time backwards.
    */
   @NonNull
-  public static DateValidatorPointForward now() {
-    return from(UtcDates.getTodayCalendar().getTimeInMillis());
+  public static DateValidatorPointBackward now() {
+    return before(UtcDates.getTodayCalendar().getTimeInMillis());
   }
 
   /** Part of {@link Parcelable} requirements. Do not use. */
-  public static final Parcelable.Creator<DateValidatorPointForward> CREATOR =
-      new Parcelable.Creator<DateValidatorPointForward>() {
+  public static final Parcelable.Creator<DateValidatorPointBackward> CREATOR =
+      new Parcelable.Creator<DateValidatorPointBackward>() {
         @NonNull
         @Override
-        public DateValidatorPointForward createFromParcel(@NonNull Parcel source) {
-          return new DateValidatorPointForward(source.readLong());
+        public DateValidatorPointBackward createFromParcel(@NonNull Parcel source) {
+          return new DateValidatorPointBackward(source.readLong());
         }
 
         @NonNull
         @Override
-        public DateValidatorPointForward[] newArray(int size) {
-          return new DateValidatorPointForward[size];
+        public DateValidatorPointBackward[] newArray(int size) {
+          return new DateValidatorPointBackward[size];
         }
       };
 
   @Override
   public boolean isValid(long date) {
-    return date >= point;
+    return date <= point;
   }
 
   @Override
@@ -89,10 +90,11 @@ public class DateValidatorPointForward implements DateValidator {
     if (this == o) {
       return true;
     }
-    if (!(o instanceof DateValidatorPointForward)) {
+    if (!(o instanceof DateValidatorPointBackward)) {
       return false;
     }
-    DateValidatorPointForward that = (DateValidatorPointForward) o;
+
+    DateValidatorPointBackward that = (DateValidatorPointBackward) o;
     return point == that.point;
   }
 

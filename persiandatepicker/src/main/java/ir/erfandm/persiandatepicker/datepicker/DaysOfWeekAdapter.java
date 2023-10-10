@@ -13,11 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package ir.erfandm.persiandatepicker;
+package ir.erfandm.persiandatepicker.datepicker;
 
 import android.annotation.SuppressLint;
-import android.os.Build.VERSION;
-import android.os.Build.VERSION_CODES;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -29,6 +27,8 @@ import androidx.annotation.Nullable;
 import com.ibm.icu.text.SimpleDateFormat;
 import com.ibm.icu.util.Calendar;
 import java.util.Locale;
+
+import ir.erfandm.persiandatepicker.R;
 
 /**
  * A single row adapter representing the days of the week for {@link Calendar}.

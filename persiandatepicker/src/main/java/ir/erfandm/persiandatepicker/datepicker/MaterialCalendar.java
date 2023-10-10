@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package ir.erfandm.persiandatepicker;
+package ir.erfandm.persiandatepicker.datepicker;
 
 import android.content.Context;
 import android.content.res.Resources;
@@ -48,6 +48,8 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import com.google.android.material.button.MaterialButton;
 import com.ibm.icu.util.Calendar;
+
+import ir.erfandm.persiandatepicker.R;
 
 /**
  * Fragment for a days of week {@link Calendar} represented as a header row of days labels and

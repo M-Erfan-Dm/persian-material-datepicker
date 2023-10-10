@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package ir.erfandm.persiandatepicker;
+package ir.erfandm.persiandatepicker.datepicker;
 
 import android.content.Context;
 import android.text.Editable;
@@ -26,7 +26,8 @@ import com.google.android.material.textfield.TextInputLayout;
 import com.ibm.icu.text.DateFormat;
 import java.text.ParseException;
 import java.util.Date;
-import java.util.Locale;
+
+import ir.erfandm.persiandatepicker.R;
 
 abstract class DateFormatTextWatcher extends TextWatcherAdapter {
 
