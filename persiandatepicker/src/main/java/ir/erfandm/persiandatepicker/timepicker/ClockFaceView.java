@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package ir.erfandm.persiantimepicker;
+package ir.erfandm.persiandatepicker.timepicker;
 
 import static android.view.MotionEvent.ACTION_DOWN;
 import static android.view.MotionEvent.ACTION_UP;
@@ -22,6 +22,7 @@ import static androidx.core.view.accessibility.AccessibilityNodeInfoCompat.Colle
 import static java.lang.Math.abs;
 import static java.lang.Math.max;
 
+import ir.erfandm.persiandatepicker.R;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.ColorStateList;
@@ -54,7 +55,7 @@ import androidx.core.view.accessibility.AccessibilityNodeInfoCompat.Accessibilit
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat.CollectionInfoCompat;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat.CollectionItemInfoCompat;
 import com.google.android.material.resources.MaterialResources;
-import ir.erfandm.persiantimepicker.ClockHandView.OnRotateListener;
+import ir.erfandm.persiandatepicker.timepicker.ClockHandView.OnRotateListener;
 
 import java.util.Arrays;
 

@@ -22,7 +22,7 @@
   android:layout_height="256dp"
   android:layout_gravity="center">
 
-  <ir.erfandm.persiantimepicker.ClockHandView
+  <ir.erfandm.persiandatepicker.timepicker.ClockHandView
     android:id="@+id/material_clock_hand"
     android:layout_width="match_parent"
     android:layout_height="match_parent"

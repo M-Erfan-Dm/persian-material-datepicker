@@ -14,11 +14,12 @@
  * limitations under the License.
  */
 
-package ir.erfandm.persiantimepicker;
+package ir.erfandm.persiandatepicker.timepicker;
 
 import static androidx.annotation.RestrictTo.Scope.LIBRARY_GROUP;
-import static ir.erfandm.persiantimepicker.TimeFormat.CLOCK_24H;
+import static ir.erfandm.persiandatepicker.timepicker.TimeFormat.CLOCK_24H;
 
+import ir.erfandm.persiandatepicker.R;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -56,7 +57,7 @@ import com.google.android.material.resources.MaterialAttributes;
 import com.google.android.material.shape.MaterialShapeDrawable;
 import com.google.errorprone.annotations.CanIgnoreReturnValue;
 
-import ir.erfandm.persiantimepicker.TimePickerView.OnDoubleTapListener;
+import ir.erfandm.persiandatepicker.timepicker.TimePickerView.OnDoubleTapListener;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.util.LinkedHashSet;

@@ -14,12 +14,13 @@
  * limitations under the License.
  */
 
-package ir.erfandm.persiantimepicker;
+package ir.erfandm.persiandatepicker.timepicker;
 
 import static android.text.TextUtils.isEmpty;
 
-import static ir.erfandm.persiantimepicker.TimePickerView.GENERIC_VIEW_ACCESSIBILITY_CLASS_NAME;
+import static ir.erfandm.persiandatepicker.timepicker.TimePickerView.GENERIC_VIEW_ACCESSIBILITY_CLASS_NAME;
 
+import ir.erfandm.persiandatepicker.R;
 import android.content.Context;
 import android.content.res.Configuration;
 import android.os.Build.VERSION;

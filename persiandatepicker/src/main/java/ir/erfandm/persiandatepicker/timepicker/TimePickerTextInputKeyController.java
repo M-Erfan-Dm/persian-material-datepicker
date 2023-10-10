@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package ir.erfandm.persiantimepicker;
+package ir.erfandm.persiandatepicker.timepicker;
 
 import static android.view.inputmethod.EditorInfo.IME_ACTION_DONE;
 import static android.view.inputmethod.EditorInfo.IME_ACTION_NEXT;
@@ -31,7 +31,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.TextView.OnEditorActionListener;
 import com.google.android.material.textfield.TextInputLayout;
-import ir.erfandm.persiantimepicker.TimePickerControls.ActiveSelection;
+import ir.erfandm.persiandatepicker.timepicker.TimePickerControls.ActiveSelection;
 
 /**
  * A class for the keyboard logic when the TimePicker is in {@code TimeFormat.KEYBOARD}

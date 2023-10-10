@@ -14,11 +14,11 @@
  * limitations under the License.
  */
 
-package ir.erfandm.persiantimepicker;
+package ir.erfandm.persiandatepicker.timepicker;
 
-import static ir.erfandm.persiantimepicker.RadialViewGroup.LEVEL_1;
-import static ir.erfandm.persiantimepicker.RadialViewGroup.LEVEL_2;
-import static ir.erfandm.persiantimepicker.RadialViewGroup.LEVEL_RADIUS_RATIO;
+import static ir.erfandm.persiandatepicker.timepicker.RadialViewGroup.LEVEL_1;
+import static ir.erfandm.persiandatepicker.timepicker.RadialViewGroup.LEVEL_2;
+import static ir.erfandm.persiandatepicker.timepicker.RadialViewGroup.LEVEL_RADIUS_RATIO;
 
 import com.google.android.material.R;
 import android.animation.Animator;

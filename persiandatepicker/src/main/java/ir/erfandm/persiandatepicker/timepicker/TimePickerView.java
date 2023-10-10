@@ -14,13 +14,14 @@
  * limitations under the License.
  */
 
-package ir.erfandm.persiantimepicker;
+package ir.erfandm.persiandatepicker.timepicker;
 
 import static java.util.Calendar.AM;
 import static java.util.Calendar.HOUR;
 import static java.util.Calendar.MINUTE;
 import static java.util.Calendar.PM;
 
+import ir.erfandm.persiandatepicker.R;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.text.TextUtils;
@@ -40,8 +41,8 @@ import androidx.core.view.AccessibilityDelegateCompat;
 import androidx.core.view.ViewCompat;
 import com.google.android.material.button.MaterialButtonToggleGroup;
 import com.google.android.material.chip.Chip;
-import ir.erfandm.persiantimepicker.ClockHandView.OnActionUpListener;
-import ir.erfandm.persiantimepicker.ClockHandView.OnRotateListener;
+import ir.erfandm.persiandatepicker.timepicker.ClockHandView.OnActionUpListener;
+import ir.erfandm.persiandatepicker.timepicker.ClockHandView.OnRotateListener;
 
 import java.util.Locale;
 

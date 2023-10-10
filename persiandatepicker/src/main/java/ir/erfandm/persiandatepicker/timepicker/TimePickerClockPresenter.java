@@ -14,30 +14,31 @@
  * limitations under the License.
  */
 
-package ir.erfandm.persiantimepicker;
+package ir.erfandm.persiandatepicker.timepicker;
 
 import static android.view.HapticFeedbackConstants.CLOCK_TICK;
 import static android.view.HapticFeedbackConstants.VIRTUAL_KEY;
 import static android.view.View.GONE;
 import static androidx.core.content.ContextCompat.getSystemService;
-import static ir.erfandm.persiantimepicker.RadialViewGroup.LEVEL_1;
-import static ir.erfandm.persiantimepicker.RadialViewGroup.LEVEL_2;
-import static ir.erfandm.persiantimepicker.TimeFormat.CLOCK_12H;
-import static ir.erfandm.persiantimepicker.TimeFormat.CLOCK_24H;
+import static ir.erfandm.persiandatepicker.timepicker.RadialViewGroup.LEVEL_1;
+import static ir.erfandm.persiandatepicker.timepicker.RadialViewGroup.LEVEL_2;
+import static ir.erfandm.persiandatepicker.timepicker.TimeFormat.CLOCK_12H;
+import static ir.erfandm.persiandatepicker.timepicker.TimeFormat.CLOCK_24H;
 import static java.util.Calendar.HOUR;
 import static java.util.Calendar.MINUTE;
 
+import ir.erfandm.persiandatepicker.R;
 import android.os.Build.VERSION;
 import android.os.Build.VERSION_CODES;
 import android.view.View;
 import android.view.accessibility.AccessibilityManager;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 
-import ir.erfandm.persiantimepicker.ClockHandView.OnActionUpListener;
-import ir.erfandm.persiantimepicker.ClockHandView.OnRotateListener;
-import ir.erfandm.persiantimepicker.TimePickerControls.ActiveSelection;
-import ir.erfandm.persiantimepicker.TimePickerView.OnPeriodChangeListener;
-import ir.erfandm.persiantimepicker.TimePickerView.OnSelectionChange;
+import ir.erfandm.persiandatepicker.timepicker.ClockHandView.OnActionUpListener;
+import ir.erfandm.persiandatepicker.timepicker.ClockHandView.OnRotateListener;
+import ir.erfandm.persiandatepicker.timepicker.TimePickerControls.ActiveSelection;
+import ir.erfandm.persiandatepicker.timepicker.TimePickerView.OnPeriodChangeListener;
+import ir.erfandm.persiandatepicker.timepicker.TimePickerView.OnSelectionChange;
 
 class TimePickerClockPresenter
     implements OnRotateListener,

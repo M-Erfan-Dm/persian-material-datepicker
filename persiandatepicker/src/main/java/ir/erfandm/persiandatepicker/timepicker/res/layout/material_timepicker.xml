@@ -41,7 +41,7 @@
     android:id="@+id/material_clock_period_toggle"
     layout="@layout/clock_period_toggle" />
 
-  <ir.erfandm.persiantimepicker.ClockFaceView
+  <ir.erfandm.persiandatepicker.timepicker.ClockFaceView
     android:id="@+id/material_clock_face"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"

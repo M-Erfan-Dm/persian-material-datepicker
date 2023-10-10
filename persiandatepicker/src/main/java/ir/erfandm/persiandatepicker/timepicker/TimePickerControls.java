@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package ir.erfandm.persiantimepicker;
+package ir.erfandm.persiandatepicker.timepicker;
 
 import androidx.annotation.IntDef;
 import androidx.annotation.IntRange;

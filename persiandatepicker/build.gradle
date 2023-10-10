@@ -32,7 +32,7 @@ android {
     sourceSets {
         main {
             res {
-                srcDirs 'src/main/res', 'src/main/java/ir/erfandm/persiandatepicker/datepicker/res'
+                srcDirs 'src/main/res', 'src/main/java/ir/erfandm/persiandatepicker/datepicker/res', 'src/main/java/ir/erfandm/persiandatepicker/timepicker/res'
             }
         }
     }

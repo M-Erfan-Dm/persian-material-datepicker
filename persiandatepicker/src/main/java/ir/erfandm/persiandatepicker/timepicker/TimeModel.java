@@ -14,14 +14,15 @@
  * limitations under the License.
  */
 
-package ir.erfandm.persiantimepicker;
+package ir.erfandm.persiandatepicker.timepicker;
 
-import static ir.erfandm.persiantimepicker.TimeFormat.CLOCK_12H;
-import static ir.erfandm.persiantimepicker.TimeFormat.CLOCK_24H;
+import static ir.erfandm.persiandatepicker.timepicker.TimeFormat.CLOCK_12H;
+import static ir.erfandm.persiandatepicker.timepicker.TimeFormat.CLOCK_24H;
 import static java.util.Calendar.AM;
 import static java.util.Calendar.HOUR;
 import static java.util.Calendar.PM;
 
+import ir.erfandm.persiandatepicker.R;
 import android.content.res.Resources;
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -29,8 +30,8 @@ import androidx.annotation.IntRange;
 import androidx.annotation.Nullable;
 import androidx.annotation.StringRes;
 
-import ir.erfandm.persiantimepicker.TimePickerControls.ActiveSelection;
-import ir.erfandm.persiantimepicker.TimePickerControls.ClockPeriod;
+import ir.erfandm.persiandatepicker.timepicker.TimePickerControls.ActiveSelection;
+import ir.erfandm.persiandatepicker.timepicker.TimePickerControls.ClockPeriod;
 import java.util.Arrays;
 
 /** The representation of the TimeModel used by TimePicker views. */
@@ -39,10 +40,10 @@ class TimeModel implements Parcelable {
   public static final String ZERO_LEADING_NUMBER_FORMAT = "%02d";
   public static final String NUMBER_FORMAT = "%d";
 
-  private final ir.erfandm.persiantimepicker.MaxInputValidator minuteInputValidator;
-  private final ir.erfandm.persiantimepicker.MaxInputValidator hourInputValidator;
+  private final MaxInputValidator minuteInputValidator;
+  private final MaxInputValidator hourInputValidator;
 
-  @ir.erfandm.persiantimepicker.TimeFormat
+  @TimeFormat
   final int format;
 
   int hour;
@@ -55,7 +56,7 @@ class TimeModel implements Parcelable {
     this(CLOCK_12H);
   }
 
-  public TimeModel(@ir.erfandm.persiantimepicker.TimeFormat int format) {
+  public TimeModel(@TimeFormat int format) {
     this(0, 0, HOUR, format);
   }
 

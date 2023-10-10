@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package ir.erfandm.persiantimepicker;
+package ir.erfandm.persiandatepicker.timepicker;
 
 import android.content.Context;
 import android.view.View;

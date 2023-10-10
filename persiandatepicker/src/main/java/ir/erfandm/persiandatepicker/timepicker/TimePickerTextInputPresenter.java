@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package ir.erfandm.persiantimepicker;
+package ir.erfandm.persiandatepicker.timepicker;
 
 import static android.view.View.GONE;
 import static java.util.Calendar.AM;
@@ -22,8 +22,9 @@ import static java.util.Calendar.HOUR;
 import static java.util.Calendar.MINUTE;
 import static java.util.Calendar.PM;
 
-import static ir.erfandm.persiantimepicker.TimeFormat.CLOCK_12H;
+import static ir.erfandm.persiandatepicker.timepicker.TimeFormat.CLOCK_12H;
 
+import ir.erfandm.persiandatepicker.R;
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.PorterDuff;
@@ -45,7 +46,7 @@ import com.google.android.material.button.MaterialButtonToggleGroup;
 import com.google.android.material.color.MaterialColors;
 import com.google.android.material.internal.TextWatcherAdapter;
 import com.google.android.material.internal.ViewUtils;
-import ir.erfandm.persiantimepicker.TimePickerView.OnSelectionChange;
+import ir.erfandm.persiandatepicker.timepicker.TimePickerView.OnSelectionChange;
 import java.lang.reflect.Field;
 import java.util.Locale;
 

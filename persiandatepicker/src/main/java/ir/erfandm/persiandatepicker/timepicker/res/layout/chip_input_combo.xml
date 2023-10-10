@@ -15,7 +15,7 @@
   ~ limitations under the License.
 -->
 
-<ir.erfandm.persiantimepicker.ChipTextInputComboView
+<ir.erfandm.persiandatepicker.timepicker.ChipTextInputComboView
   xmlns:android="http://schemas.android.com/apk/res/android"
   android:layout_width="wrap_content"
   android:layout_height="wrap_content" />

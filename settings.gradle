@@ -14,4 +14,3 @@ dependencyResolutionManagement {
 }
 rootProject.name = "PersianMaterialDatePicker"
 include ':persiandatepicker'
-include ':persiantimepicker'
