@@ -16,7 +16,7 @@ repositories {
 }
 
 dependencies {
-    implementation 'com.github.M-Erfan-Dm:persian-material-datepicker:1.0.0'
+    implementation 'com.github.M-Erfan-Dm:persian-material-datepicker:1.0.1'
 }
 ```
 
