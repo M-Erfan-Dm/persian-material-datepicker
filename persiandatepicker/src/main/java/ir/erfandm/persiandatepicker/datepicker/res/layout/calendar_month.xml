@@ -21,6 +21,7 @@
   android:layout_height="wrap_content"
   android:addStatesFromChildren="false"
   android:descendantFocusability="afterDescendants"
+  android:layoutDirection="rtl"
   android:gravity="center"
   android:horizontalSpacing="@dimen/mtrl_calendar_month_horizontal_padding"
   android:listSelector="@android:color/transparent"
