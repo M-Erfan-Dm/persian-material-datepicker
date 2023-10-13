@@ -1,4 +1,4 @@
-# Persian Material Date Picker
+# Persian Material Date And Time Picker
 
 This library provides a Shamsi (Persian calendar) and Persian time picker, built using Google's Material Date and Time Picker.
 
